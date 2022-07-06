@@ -1,0 +1,26 @@
+﻿@page
+@model Libro_Book_Store.Pages.Admin.CreateModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+<h1>Create New Book Entry</h1>
+
+<p>Book Enty Form</p>
+
+<form method="post">
+    <div>
+        Title: <input asp-for="Book.Title" />
+    </div>
+    <div>
+        Author: <input asp-for="Book.Author" />
+    </div>
+    <div>
+        Price: <input asp-for="Book.Price" />
+    </div>
+    <div>
+        Description: <input asp-for="Book.Description" />
+    </div>
+    <input type="submit" />
+</form>

@@ -1,0 +1,58 @@
+﻿html, body, header, footer {
+    text-align: center;
+    background-color: #98ebb5;
+    font-family: Arial;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: lightgrey;
+}
+
+h1{
+    
+}
+
+
+
+
+.navbar {
+    background-color: lightgrey;
+    overflow: hidden;
+}
+
+
+
+.navbar a {
+    float:left;
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+}
+
+navbar a:hover {
+            background-color:slategray;
+            color:white;
+}
+
+a {
+    display: inline;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+login-button {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}

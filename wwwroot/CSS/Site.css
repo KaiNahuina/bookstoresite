@@ -1,0 +1,14 @@
+﻿button {
+    height: 30px;
+    width: 300px;
+    background-color: darkgreen;
+}
+
+bottom-spacing{
+    margin-bottom: 500px;
+
+}
+
+top-spacing{
+    margin-top: 400px;
+}
