@@ -1,7 +1,12 @@
-﻿button {
-    height: 30px;
+﻿.button {
+    height: 25px;
     width: 300px;
-    background-color: darkgreen;
+    background-color: darkgray;
+    text-decoration:none;
+    outline-color:black;
+    display:inline-block;
+    text-align:center;
+    padding-top: 5px;
 }
 
 bottom-spacing{
