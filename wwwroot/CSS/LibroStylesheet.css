@@ -11,7 +11,7 @@ header {
 footer {
     text-align: center;
     background-color: lightgrey;
-    margin-top: 500px;
+    margin-top: 400px;
 }
 
 h1{
@@ -30,14 +30,14 @@ h1{
 
 .navbar a {
     float:left;
-        display: inline-block;
+        display: block;
         color: black;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
 }
 
-navbar a:hover {
+.navbar a:hover {
             background-color:slategray;
             color:white;
 }
