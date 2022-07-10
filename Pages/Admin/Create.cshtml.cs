@@ -19,5 +19,13 @@ namespace Libro_Book_Store.Pages.Admin
         public void OnGet()
         {
         }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            _db.LibrosList.Add(Book);
+            await _db.SaveChangesAsync();
+            return Page();
+        }
+
     }
 }

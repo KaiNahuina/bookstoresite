@@ -2,14 +2,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.Extensions.Configuration;
 using Libro_Book_Store.Data;
+using Microsoft.Extensions.Hosting;
 
 namespace Libro_Book_Store
 {
@@ -27,7 +28,7 @@ namespace Libro_Book_Store
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddMvc(options => options.EnableEndpointRouting=false);
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
         }
 
@@ -38,14 +39,15 @@ namespace Libro_Book_Store
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseHttpsRedirection();
-            app.UseRouting();
+            //app.UseHttpsRedirection();
+            //app.UseRouting();
             app.UseStaticFiles();
+            app.UseMvc(); //Problem
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
-            });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapRazorPages();
+            //});
         }
     }
 }
