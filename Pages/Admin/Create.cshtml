@@ -9,18 +9,18 @@
 
 <h2>Book Enty Form</h2>
 
-<form method="post">
+<form method="post" id="CreateForm">
     <div class="division">
-        Title: <input asp-for="Book.Title" />
+        Title: <input asp-for="Book.Title" id="title"/>
     </div>
     <div class="division">
-        Author: <input asp-for="Book.Author" />
+        Author: <input asp-for="Book.Author" id="author"/>
     </div>
     <div class="division">
-        Price: <input asp-for="Book.Price" />
+        Price: <input asp-for="Book.Price" id="price"/>
     </div>
     <div class="division">
-        Description: <input asp-for="Book.Description" />
+        Description: <input asp-for="Book.Description" id="description"/>
     </div>
     <input type="submit" />
 </form>

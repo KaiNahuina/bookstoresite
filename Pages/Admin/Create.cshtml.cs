@@ -11,6 +11,8 @@ namespace Libro_Book_Store.Pages.Admin
     public class CreateModel : PageModel
     {
         private AppDbContext _db;
+
+        [BindProperty]
         public Libros Book { get; set; }
         public CreateModel(AppDbContext db)
         {

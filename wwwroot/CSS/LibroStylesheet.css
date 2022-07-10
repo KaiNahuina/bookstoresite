@@ -8,7 +8,7 @@ header {
     text-align: center;
 }
 
-footer {
+.footer {
     text-align: center;
     background-color: lightgrey;
     margin-top: 500px;
@@ -16,9 +16,7 @@ footer {
 }
 
 
-h1{
-    
-}
+
 
 
 
