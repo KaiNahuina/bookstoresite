@@ -4,6 +4,17 @@
     ViewData["Title"] = "Checkout";
     Layout = "~/Pages/_Layout.cshtml";
 }
+@using Libro_Book_Store.Data;
+@using Microsoft.Extensions.Options;
+@inject IOptions<StripeSettings> Stripe;
+
 <h1>
-    Checkout page
+    Checkout
 </h1>
+
+<form asp-page-handler="Charge" asp-route-amount="Model.AmountPayable" method="post">
+    <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="@Stripe.Value.PublishableKey" data-locale="auto" data-description="LiBro Books Charge" data-amount="@Model.AmountPayable" data-currency="GBP"></script>
+
+
+
+</form>

@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.Extensions.Configuration;
 using Libro_Book_Store.Data;
 using Microsoft.Extensions.Hosting;
+using Stripe;
 
 namespace Libro_Book_Store
 {
@@ -30,6 +31,7 @@ namespace Libro_Book_Store
         {
             services.AddMvc(options => options.EnableEndpointRouting=false);
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,15 +41,18 @@ namespace Libro_Book_Store
             {
                 app.UseDeveloperExceptionPage();
             }
-            //app.UseHttpsRedirection();
-            //app.UseRouting();
+            StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
+            app.UseHttpsRedirection();
+            app.UseRouting();
             app.UseStaticFiles();
-            app.UseMvc(); //Problem
+            //app.UseMvc(); //Problem
+            app.UseAuthentication();
+            app.UseAuthorization();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapRazorPages();
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+            });
         }
     }
 }
