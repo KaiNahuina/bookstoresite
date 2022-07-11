@@ -9,7 +9,7 @@
 
 <h2>Book Enty Form</h2>
 
-<form method="post" id="CreateForm">
+<form method="post" id="CreateForm" enctype="multipart/form-data">
     <div class="division">
         Title: <input asp-for="Book.Title" id="title"/>
     </div>
@@ -21,6 +21,9 @@
     </div>
     <div class="division">
         Description: <input asp-for="Book.Description" id="description"/>
+    </div>
+    <div class="division">
+        Upload Image:<br /> <input type="file" id="image" name="image" multiple="multiple" />
     </div>
     <input type="submit" />
 </form>

@@ -15,6 +15,7 @@ namespace Libro_Book_Store.Data
         public double Price { get; set; }
         [StringLength(250)]
         public string Description { get; set; }
-
+        public byte[] ImageData { get; set; }
+        public bool Active { get; internal set; }
     }
 }
