@@ -6,19 +6,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Libro_Book_Store.Data
 {
-    public class AppDbContext : DbContext/*IdentityDbContext<ApplicationUser>*/
+    public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions/*<AppDbContext>*/ options) : base(options)
+        public AppDbContext(DbContextOptions options) : base(options)
         {
 
         }
 
         public DbSet<Libros> LibrosList { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
-        //}
+        
 
     }
 
