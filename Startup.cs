@@ -31,6 +31,9 @@ namespace Libro_Book_Store
         {
             services.AddMvc(options => options.EnableEndpointRouting=false);
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
+
+            //services.AddDatabaseDeveloperPageExceptionFilter();
+
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
         }
 
@@ -40,6 +43,7 @@ namespace Libro_Book_Store
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseMigrationsEndPoint();
             }
             StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
             app.UseHttpsRedirection();

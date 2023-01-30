@@ -28,22 +28,22 @@
 
 
         </thead>
-        @*<tbody>
-            @foreach(var stat in Model.Libros)
+        <tbody>
+            @foreach(var Book in Model.Libros)
             {
                 <tr>
-                    <td>@Book.Name</td>
+                    <td>@Book.Title</td>
                     <td>@Book.Author</td>
                     <td>@Book.Price.ToString("C")</td>
                     <td>@Book.Description</td>
-                    <td>@Book.Image</td>
+                    <td>@Book.ImageData</td>
                 </tr>
             }
 
 
 
 
-        </tbody>*@
+        </tbody>
 
 
     </table>

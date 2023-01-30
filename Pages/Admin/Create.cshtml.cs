@@ -14,7 +14,7 @@ namespace Libro_Book_Store.Pages.Admin
         private AppDbContext _db;
 
         [BindProperty]
-        public Libros Book { get; set; }
+        public Book_List Book { get; set; }
         public CreateModel(AppDbContext db)
         {
             _db = db;
@@ -38,7 +38,7 @@ namespace Libro_Book_Store.Pages.Admin
             }
 
 
-            _db.LibrosList.Add(Book);
+            _db.Book_Lists.Add(Book);
             await _db.SaveChangesAsync();
             return RedirectToPage("/Admin/Create");
         }

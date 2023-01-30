@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Libro_Book_Store.Data
 {
-    public class Libros
+    public class Book_List
     {
         [Key]
 
@@ -17,5 +17,7 @@ namespace Libro_Book_Store.Data
         public string Description { get; set; }
         public byte[] ImageData { get; set; }
         public bool Active { get; internal set; }
+
+
     }
 }

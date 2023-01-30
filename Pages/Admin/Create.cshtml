@@ -10,6 +10,7 @@
 <h2>Book Enty Form</h2>
 
 <form method="post" id="CreateForm" enctype="multipart/form-data">
+    <div asp-validation-summary="All"></div>
     <div class="division">
         Title: <input asp-for="Book.Title" id="title"/>
     </div>

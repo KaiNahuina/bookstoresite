@@ -10,17 +10,18 @@ namespace Libro_Book_Store.Pages
     public class ShopModel : PageModel
     {
         private readonly AppDbContext _db;
+        public IList<Book_List> Libros { get; private set; }
         public ShopModel(AppDbContext db)
         {
             _db = db;
         }
 
-        public IList<Libros> Libros { get; private set; }
+       
 
 
         public void OnGet()
         {
-            Libros = _db.LibrosList.FromSqlRaw("SELECT * FROM Book_List").ToList();
+            Libros = _db.Book_Lists.FromSqlRaw("SELECT * FROM Book_List").ToList();
         }
     }
 }
